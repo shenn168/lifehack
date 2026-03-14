@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clean Room</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">CR</div>
+        <div class="titles">
+          <div class="name">Clean Room</div>
+          <div id="site" class="site">—</div>
+        </div>
+      </div>
+
+      <div class="scoreWrap">
+        <div class="scoreLabel">Score</div>
+        <div id="score" class="score">—</div>
+      </div>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <div class="metric">
+          <div class="metricLabel">First-party</div>
+          <div id="fpCount" class="metricValue">—</div>
+        </div>
+        <div class="metric">
+          <div class="metricLabel">Third-party</div>
+          <div id="tpCount" class="metricValue">—</div>
+        </div>
+        <div class="metric">
+          <div class="metricLabel">Trackers</div>
+          <div id="trkCount" class="metricValue">—</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div class="rowLeft">
+            <div class="rowTitle">Quiet Mode</div>
+            <div class="rowSub">Blocks common tracker domains for this site</div>
+          </div>
+          <label class="switch">
+            <input id="quietToggle" type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div id="quietHint" class="hint">Off</div>
+      </div>
+
+      <div class="card listCard">
+        <div class="listHeader">
+          <div class="rowTitle">Third-party map</div>
+          <button id="refresh" class="btn">Refresh</button>
+        </div>
+        <div id="list" class="list">
+          <div class="empty">No data yet. Refresh after the page loads.</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="fine">Local-only. MVP view of requests seen in this tab.</div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

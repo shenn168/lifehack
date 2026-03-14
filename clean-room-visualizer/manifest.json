@@ -1,0 +1,25 @@
+{
+  "name": "Clean Room: Third-Party Risk Visualizer",
+  "description": "Visualize third-party requests and enable Quiet Mode per site.",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Clean Room",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  }
+}
