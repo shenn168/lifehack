@@ -1,0 +1,253 @@
+:root {
+  --bg1: #fff6f8;
+  --bg2: #fff0f4;
+  --panel: rgba(255, 255, 255, 0.9);
+  --text: #2f2027;
+  --muted: #755d66;
+  --primary: #d6336c;
+  --primary-dark: #ae2455;
+  --accent: #ff8fab;
+  --soft: #ffe3ea;
+  --border: #f0ccd6;
+  --shadow: 0 16px 40px rgba(182, 38, 89, 0.12);
+  --danger: #c92a2a;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top right, #ffdbe5 0%, transparent 22%),
+    radial-gradient(circle at left center, #ffeef3 0%, transparent 18%),
+    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+  color: var(--text);
+}
+
+.page-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ff8fab, #d6336c);
+  color: white;
+  font-size: 28px;
+  box-shadow: var(--shadow);
+}
+
+.brand h1 {
+  margin: 0;
+}
+
+.brand p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(240, 204, 214, 0.95);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.hero-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-panel h2 {
+  margin: 0 0 8px;
+}
+
+.hero-panel p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+.hero-score {
+  text-align: right;
+}
+
+.score-number {
+  font-size: 54px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.score-band {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  background: #f5e8ed;
+  color: #7e4f5b;
+}
+
+.score-band.low {
+  background: #e6f7ea;
+  color: #2b8a3e;
+}
+
+.score-band.mild {
+  background: #fff4e6;
+  color: #e67700;
+}
+
+.score-band.moderate {
+  background: #ffe8cc;
+  color: #d9480f;
+}
+
+.score-band.high,
+.score-band.veryhigh {
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.stat-card {
+  background: linear-gradient(180deg, #fff8fa, #fff2f5);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stat-value {
+  margin-top: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  margin: 0 0 12px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.primary-btn,
+.danger-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 700;
+  transition: transform 0.12s ease;
+}
+
+.primary-btn:hover,
+.danger-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.danger-btn {
+  background: #fff0f0;
+  color: var(--danger);
+}
+
+.microcopy {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.history-table th,
+.history-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f3dbe2;
+  text-align: left;
+  font-size: 14px;
+}
+
+.history-table th {
+  background: #fff2f5;
+  color: #7a4c58;
+  font-weight: 700;
+}
+
+.row-btn {
+  border: none;
+  background: #fff0f0;
+  color: #c92a2a;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.empty-state {
+  color: var(--muted);
+  padding: 14px 0;
+}
+
+@media (max-width: 900px) {
+  .hero-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-score {
+    text-align: left;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

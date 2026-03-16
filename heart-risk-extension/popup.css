@@ -1,0 +1,272 @@
+:root {
+  --bg: #fff6f8;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-strong: #ffffff;
+  --text: #2d1f25;
+  --muted: #7c6670;
+  --primary: #d6336c;
+  --primary-dark: #b02659;
+  --accent: #ff8fab;
+  --soft: #ffe3ea;
+  --border: #f0c8d3;
+  --shadow: 0 12px 30px rgba(182, 38, 89, 0.12);
+  --success: #2f9e44;
+  --warn: #f08c00;
+  --danger: #c92a2a;
+}
+
+body {
+  margin: 0;
+  width: 400px;
+  min-height: 640px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top right, #ffd6e0 0%, transparent 28%),
+    radial-gradient(circle at top left, #ffe8ee 0%, transparent 26%),
+    linear-gradient(180deg, #fff8fa 0%, #fff1f4 100%);
+  color: var(--text);
+}
+
+.app-shell {
+  padding: 16px;
+}
+
+.hero {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.hero-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  background: linear-gradient(135deg, #ff8fab, #d6336c);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.card {
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(240, 200, 211, 0.9);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.big-score {
+  font-size: 44px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: var(--primary);
+}
+
+.band-pill {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.band-pill.neutral {
+  background: #f4e8ec;
+  color: #7a4b55;
+}
+
+.band-pill.low {
+  background: #e6f7ea;
+  color: #2b8a3e;
+}
+
+.band-pill.mild {
+  background: #fff4e6;
+  color: #e67700;
+}
+
+.band-pill.moderate {
+  background: #ffe8cc;
+  color: #d9480f;
+}
+
+.band-pill.high,
+.band-pill.veryhigh {
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.small-muted {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 10px 0 6px;
+  color: #6d4a55;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  background: var(--panel-strong);
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 143, 171, 0.18);
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 10px;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.primary-btn,
+.secondary-btn,
+.ghost-btn,
+.danger-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 600;
+  transition: transform 0.12s ease, opacity 0.12s ease, background 0.12s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.ghost-btn:hover,
+.danger-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  flex: 1;
+}
+
+.secondary-btn {
+  background: #fce4ec;
+  color: #9c2d58;
+  flex: 1;
+}
+
+.ghost-btn {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+.danger-btn {
+  background: #fff0f0;
+  color: #c92a2a;
+}
+
+.result-panel {
+  margin-top: 14px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff7f9, #fff1f4);
+  border: 1px solid var(--border);
+  padding: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.metric-box {
+  background: white;
+  border: 1px solid #f2dbe2;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.metric-title {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.metric-value {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.warning-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.disclaimer-card p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Marker Risk Tracker Dashboard</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">❤</div>
+        <div>
+          <h1>Heart Marker Risk Tracker</h1>
+          <p>Dashboard · History · Trends</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-grid">
+      <section class="panel hero-panel">
+        <div class="hero-left">
+          <h2>Biomarker Risk Snapshot</h2>
+          <p>
+            Track serial ApoB, Lp(a), and hs-CRP results over time using a simple weighted educational score.
+          </p>
+        </div>
+        <div class="hero-score">
+          <div id="dashboardLatestScore" class="score-number">--</div>
+          <div id="dashboardLatestBand" class="score-band neutral">No data yet</div>
+        </div>
+      </section>
+
+      <section class="panel stats-panel">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Assessments</div>
+            <div id="countAssessments" class="stat-value">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Average Score</div>
+            <div id="averageScore" class="stat-value">--</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Best Score</div>
+            <div id="bestScore" class="stat-value">--</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Worst Score</div>
+            <div id="worstScore" class="stat-value">--</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-header">
+          <h3>Score Trend</h3>
+        </div>
+        <canvas id="trendCanvas" width="900" height="300"></canvas>
+      </section>
+
+      <section class="panel actions-panel">
+        <div class="panel-header">
+          <h3>Data Actions</h3>
+        </div>
+        <div class="action-buttons">
+          <button id="exportCsvBtn" class="primary-btn">Export CSV</button>
+          <button id="clearAllBtn" class="danger-btn">Clear All Data</button>
+        </div>
+        <p class="microcopy">
+          Data is stored locally in the browser.
+        </p>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="panel-header">
+          <h3>Assessment History</h3>
+        </div>
+        <div id="historyTableWrap"></div>
+      </section>
+
+      <section class="panel disclaimer-panel">
+        <h3>Important Disclaimer</h3>
+        <p>
+          This tool is an educational and research prototype only. It does not diagnose, predict,
+          or rule out heart attack or stroke for any individual. It does not include age, sex,
+          blood pressure, smoking, diabetes, kidney function, imaging, medications, or physician judgment.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="scoring.js"></script>
+  <script src="storage.js"></script>
+  <script src="charts.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

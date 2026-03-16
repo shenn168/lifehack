@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Marker Risk Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-icon">❤</div>
+      <div>
+        <h1>Heart Marker Risk Tracker</h1>
+        <p class="subtitle">ApoB · Lp(a) · hs-CRP</p>
+      </div>
+    </header>
+
+    <section class="card summary-card">
+      <div class="summary-header">
+        <span>Latest Score</span>
+        <button id="openDashboardBtn" class="ghost-btn">Open Dashboard</button>
+      </div>
+      <div id="latestScore" class="big-score">--</div>
+      <div id="latestBand" class="band-pill neutral">No data yet</div>
+      <div id="latestTrend" class="small-muted">Enter your first assessment</div>
+    </section>
+
+    <section class="card form-card">
+      <h2>New Assessment</h2>
+
+      <label>Date</label>
+      <input type="date" id="date">
+
+      <div class="grid-two">
+        <div>
+          <label>ApoB</label>
+          <input type="number" id="apobValue" placeholder="e.g. 95" min="0" step="0.1">
+        </div>
+        <div>
+          <label>Unit</label>
+          <select id="apobUnit">
+            <option value="mg/dL">mg/dL</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-two">
+        <div>
+          <label>Lp(a)</label>
+          <input type="number" id="lpaValue" placeholder="e.g. 50" min="0" step="0.1">
+        </div>
+        <div>
+          <label>Unit</label>
+          <select id="lpaUnit">
+            <option value="mg/dL">mg/dL</option>
+            <option value="nmol/L">nmol/L</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid-two">
+        <div>
+          <label>hs-CRP</label>
+          <input type="number" id="hscrpValue" placeholder="e.g. 2.1" min="0" step="0.1">
+        </div>
+        <div>
+          <label>Unit</label>
+          <select id="hscrpUnit">
+            <option value="mg/L">mg/L</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Notes</label>
+      <textarea id="notes" rows="3" placeholder="Optional notes"></textarea>
+
+      <div class="action-row">
+        <button id="calculateBtn" class="secondary-btn">Calculate</button>
+        <button id="saveBtn" class="primary-btn">Save Assessment</button>
+      </div>
+
+      <div id="resultPanel" class="result-panel hidden"></div>
+    </section>
+
+    <section class="card disclaimer-card">
+      <p>
+        Educational and research prototype only. Not medical advice, not diagnosis,
+        and not a substitute for clinician assessment.
+      </p>
+    </section>
+  </div>
+
+  <script src="scoring.js"></script>
+  <script src="storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
